@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import { loginRequest } from '../actions/index';
+import { loginRequest } from "../actions/index";
 
 import googleIcon from "../assets/static/google-icon.png";
 import twitterIcon from "../assets/static/twitter-icon.png";
@@ -10,41 +10,41 @@ import "../assets/styles/components/Login.scss";
 
 const Login = props => {
   const [form, setValues] = useState({
-    email: '',
+    email: ""
   });
 
   const handleInput = event => {
     setValues({
       ...form,
       [event.target.name]: event.target.value
-    })
+    });
   };
 
   const handleSubmit = event => {
     event.preventDefault();
     console.log(form);
     props.loginRequest(form);
-    props.history.push('/');
-  }
+    props.history.push("/");
+  };
 
   return (
     <section className="login">
       <section className="login__container">
         <h2>Inicia sesión</h2>
         <form className="login__container--form" onSubmit={handleSubmit}>
-          <input 
+          <input
             name="email"
-            className="input" 
-            type="text" 
+            className="input"
+            type="text"
             placeholder="Correo"
-            onChange={handleInput} 
+            onChange={handleInput}
           />
           <input
-            name="password" 
+            name="password"
             className="input"
-            type="password" 
+            type="password"
             placeholder="Contraseña"
-            onChange={handleInput} 
+            onChange={handleInput}
           />
           <button className="button">Iniciar sesión</button>
           <div className="login__container--remember-me">
@@ -64,16 +64,18 @@ const Login = props => {
           </div>
         </section>
         <p className="login__container--register">
-          No tienes ninguna cuenta
-          <Link to="register">Regístrate</Link>
+          No tienes ninguna cuenta <Link to="register">Regístrate</Link>
         </p>
       </section>
     </section>
   );
-}
+};
 
 const mapDispatchToProps = {
   loginRequest
 };
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(
+  null,
+  mapDispatchToProps
+)(Login);

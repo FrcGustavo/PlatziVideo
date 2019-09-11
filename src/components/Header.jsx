@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import classNames from "classnames";
 
 import gravatar from "../utils/gravatar";
 import { logoutRequest } from "../actions";
@@ -17,6 +18,8 @@ const Header = props => {
   const handleLogout = () => {
     props.logoutRequest({});
   };
+
+  console.log(props);
 
   return (
     <header className="header">

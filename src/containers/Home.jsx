@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 
 import Search from "../components/Search";
@@ -11,7 +11,7 @@ import "./../assets/styles/App.scss";
 const Home = ({ myList, trends, originals }) => {
   return (
     <>
-      <Search />
+      <Search isHome />
       {myList.length > 0 && (
         <Categories title="Mi Lista">
           <Carousel>
