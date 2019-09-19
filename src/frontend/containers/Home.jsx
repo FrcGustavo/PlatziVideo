@@ -6,8 +6,6 @@ import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
 
-import '../assets/styles/App.scss';
-
 const Home = ({ myList, trends, originals }) => {
   return (
     <>
