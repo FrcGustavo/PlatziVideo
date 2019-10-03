@@ -1,3 +1,7 @@
+import getManifest from '../getManifest';
+
+const files = getManifest();
+
 const render = (html, preloadedState) => {
   return (`
     <!DOCTYPE html>
@@ -6,7 +10,7 @@ const render = (html, preloadedState) => {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <link rel="stylesheet" href="assets/app.css" type="text/css"></link>
+            <link rel="stylesheet" href="${files['main.css']}" type="text/css"></link>
             <title>Platzi Video</title>
         </head>
         <body>
@@ -19,8 +23,8 @@ const render = (html, preloadedState) => {
                     '\\u003c'
                 )}
             </script>
-            <script src="assets/vendor.js" type="text/javascript"></script>
-            <script src="assets/app.js" type="text/javascript"></script>
+            <script src="${files['vendors.js']}" type="text/javascript"></script>
+            <script src="${files['main.js']}" type="text/javascript"></script>
         </body>
     </html>
     `);

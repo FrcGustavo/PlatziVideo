@@ -5,6 +5,7 @@ const autoprefixer = require('autoprefixer');
 const dotenv = require('dotenv');
 const TerserPlugin = require('terser-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const ManufestPlugin = require('webpack-manifest-plugin');
 
 dotenv.config();
 const isProduction = process.env.NODE_ENV === 'production';
@@ -15,7 +16,7 @@ module.exports = {
   mode: process.env.NODE_ENV,
   output: {
     path: isProduction ? path.join(process.cwd(), './src/server/public') : '/',
-    filename: 'assets/app.js',
+    filename: isProduction ? 'assets/app-[hash].js' : 'assets/app.js',
     publicPath: '/',
   },
   resolve: {
@@ -32,7 +33,7 @@ module.exports = {
           chunks: 'all',
           reuseExistingChunk: true,
           priority: 1,
-          filename: 'assets/vendor.js',
+          filename: isProduction ? 'assets/vendor-[hash].js' : 'assets/vendor.js',
           enforce: true,
           test(module, chunks) {
             const name = module.nameForCondition && module.nameForCondition();
@@ -105,11 +106,12 @@ module.exports = {
       },
     }),
     new MiniCssExtractPlugin({
-      filename: 'assets/app.css',
+      filename: isProduction ? 'assets/app-[hash].css' : 'assets/app.css',
     }),
-    /*isProduction ? new CompressionPlugin({
+    isProduction ? new CompressionPlugin({
       test: /\.js$|\.css/,
       filename: '[path].gz',
-    }) : false,*/
+    }) : false,
+    isProduction ? new ManufestPlugin() : false,
   ],
 };
