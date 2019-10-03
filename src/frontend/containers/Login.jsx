@@ -22,7 +22,6 @@ const Login = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(form);
     props.loginRequest(form);
     props.history.push('/');
   };
@@ -46,7 +45,11 @@ const Login = (props) => {
             placeholder='Contraseña'
             onChange={handleInput}
           />
-          <button className='button' type='button'>Iniciar sesión</button>
+          <input
+            className='button'
+            type='submit'
+            value='Iniciar sesión'
+          />
           <div className='login__container--remember-me'>
             <label htmlFor='cbox1'>
               <input type='checkbox' id='cbox1' value='first_checkbox' />

@@ -22,8 +22,6 @@ const Header = (props) => {
     props.logoutRequest({});
   };
 
-  console.log(props);
-
   return (
     <header className='header'>
       <Link to='/'>

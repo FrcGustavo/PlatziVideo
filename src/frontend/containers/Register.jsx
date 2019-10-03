@@ -52,7 +52,11 @@ const Register = (props) => {
             onChange={handleInput}
             name='password'
           />
-          <button className='button' type='button'>Registrarme</button>
+          <input
+            className='button'
+            type='submit'
+            value='Registrarme'
+          />
         </form>
         <Link to='login'>Iniciar sesión</Link>
       </section>

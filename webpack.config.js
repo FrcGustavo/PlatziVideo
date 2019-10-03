@@ -2,12 +2,19 @@ const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const autoprefixer = require('autoprefixer');
+const dotenv = require('dotenv');
+const TerserPlugin = require('terser-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+
+dotenv.config();
+const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
+  devtool: isProduction ? 'hidden-source-map' : 'cheap-source-map',
   entry: './src/frontend/index.js',
-  mode: 'development',
+  mode: process.env.NODE_ENV,
   output: {
-    path: '/',
+    path: isProduction ? path.join(process.cwd(), './src/server/public') : '/',
     filename: 'assets/app.js',
     publicPath: '/',
   },
@@ -15,6 +22,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   optimization: {
+    minimizer: isProduction ? [new TerserPlugin()] : [],
     splitChunks: {
       chunks: 'async',
       name: true,
@@ -99,5 +107,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'assets/app.css',
     }),
+    /*isProduction ? new CompressionPlugin({
+      test: /\.js$|\.css/,
+      filename: '[path].gz',
+    }) : false,*/
   ],
 };
