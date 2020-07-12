@@ -19,9 +19,9 @@ const render = (html, preloadedState) => {
                 // WARNING: See the following for security issues around embedding JSON in HTML:
                 // http://redux.js.org/recipes/ServerRendering.html#security-considerations
                 window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
-                    /</g,
-                    '\\u003c'
-                )}
+      /</g,
+      '\\u003c',
+    )}
             </script>
             <script src="${files['vendors.js']}" type="text/javascript"></script>
             <script src="${files['main.js']}" type="text/javascript"></script>

@@ -61,12 +61,12 @@ const Login = (props) => {
         <section className='login__container--social-media'>
           <div>
             <img src={googleIcon} alt='' />
-            {''}
+
             Inicia sesión con Google
           </div>
           <div>
             <img src={twitterIcon} alt='' />
-            {''}
+
             Inicia sesión con Twitter
           </div>
         </section>
