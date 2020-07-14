@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import '../assets/styles/components/Search.scss';
 
@@ -13,4 +14,9 @@ const Search = ({ isHome }) => {
     </section>
   );
 };
+
+Search.propTypes = {
+  isHome: PropTypes.string.isRequired,
+};
+
 export default Search;

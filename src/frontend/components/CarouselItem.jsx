@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -15,7 +17,7 @@ const CarouseItem = (props) => {
     id, cover, title, year, contentRating, duration, isList,
   } = props;
   const handleSetFavorite = () => {
-    props.setFavorite({
+    props.setF({
       id,
       cover,
       title,
@@ -25,7 +27,7 @@ const CarouseItem = (props) => {
     });
   };
   const handleDeleteFvorite = (itemId) => {
-    props.deleteFavorite(itemId);
+    props.deleteF(itemId);
   };
   return (
     <div className="carousel-item">
@@ -66,16 +68,20 @@ const CarouseItem = (props) => {
 };
 
 CarouseItem.propTypes = {
-  cover: PropTypes.string,
-  title: PropTypes.string,
-  year: PropTypes.number,
-  contentRating: PropTypes.string,
-  duration: PropTypes.number,
+  id: PropTypes.string.isRequired,
+  cover: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  year: PropTypes.number.isRequired,
+  contentRating: PropTypes.string.isRequired,
+  duration: PropTypes.number.isRequired,
+  isList: PropTypes.bool.isRequired,
+  setF: PropTypes.func.isRequired,
+  deleteF: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = {
-  setFavorite,
-  deleteFavorite,
+  setF: setFavorite,
+  deleteF: deleteFavorite,
 };
 
 export default connect(

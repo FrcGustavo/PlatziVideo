@@ -37,7 +37,7 @@ module.exports = {
           enforce: true,
           test(module, chunks) {
             const name = module.nameForCondition && module.nameForCondition();
-            return chunks.some(chunk => chunk.name !== 'vendor' && /[\\/]node_modules[\\/]/.test(name));
+            return chunks.some((chunk) => chunk.name !== 'vendor' && /[\\/]node_modules[\\/]/.test(name));
           },
         },
       },
@@ -111,7 +111,7 @@ module.exports = {
     isProduction ? new CompressionPlugin({
       test: /\.js$|\.css/,
       filename: '[path].gz',
-    }) : false,
-    isProduction ? new ManufestPlugin() : false,
+    }) : () => {},
+    isProduction ? new ManufestPlugin() : () => {},
   ],
 };

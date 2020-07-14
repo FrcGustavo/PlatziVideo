@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 // eslint-disable-next-line no-unused-vars
@@ -14,12 +15,11 @@ import '../assets/styles/components/Header.scss';
 import logo from '../assets/static/logo-platzi-video-BW2.png';
 import userIcon from '../assets/static/user-icon.png';
 
-const Header = (props) => {
-  const { user } = props;
+const Header = ({ user, logout }) => {
   const hasUser = Object.keys(user).length > 0;
 
   const handleLogout = () => {
-    props.logoutRequest({});
+    logout({});
   };
 
   return (
@@ -45,9 +45,9 @@ const Header = (props) => {
 
           {hasUser ? (
             <li>
-              <a id="#logout" onClick={handleLogout}>
+              <button type="button" onClick={handleLogout}>
                 Cerrar Sesión
-              </a>
+              </button>
             </li>
           ) : (
             <li>
@@ -60,6 +60,11 @@ const Header = (props) => {
   );
 };
 
+Header.propTypes = {
+  user: PropTypes.objectOf().isRequired,
+  logout: PropTypes.func.isRequired,
+};
+
 function mapStateToProps(state) {
   return {
     user: state.user,
@@ -67,7 +72,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-  logoutRequest,
+  logout: logoutRequest,
 };
 
 export default connect(
