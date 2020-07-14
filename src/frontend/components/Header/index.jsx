@@ -7,13 +7,12 @@ import { connect } from 'react-redux';
 // eslint-disable-next-line no-unused-vars
 import classNames from 'classnames';
 
-import gravatar from '../utils/gravatar';
-import { logoutRequest } from '../actions';
+import gravatar from '../../utils/gravatar';
+import { logoutRequest } from '../../actions';
 
-import '../assets/styles/components/Header.scss';
-
-import logo from '../assets/static/logo-platzi-video-BW2.png';
-import userIcon from '../assets/static/user-icon.png';
+import logo from '../../assets/static/logo-platzi-video-BW2.png';
+import userIcon from '../../assets/static/user-icon.png';
+import './styles.scss';
 
 const Header = ({ user, logout }) => {
   const hasUser = Object.keys(user).length > 0;
@@ -29,11 +28,11 @@ const Header = ({ user, logout }) => {
       </Link>
       <div className="header__menu">
         <div className="header__menu--profile">
-          {hasUser ? (
-            <img src={gravatar(user.email)} alt={user.email} />
-          ) : (
-            <img src={userIcon} alt="" />
-          )}
+          {
+          hasUser
+            ? (<img src={gravatar(user.email)} alt={user.email} />)
+            : (<img src={userIcon} alt="" />)
+          }
           <p>Perfil</p>
         </div>
         <ul>

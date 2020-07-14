@@ -1,18 +1,23 @@
+require('dotenv').config();
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const autoprefixer = require('autoprefixer');
-const dotenv = require('dotenv');
 const TerserPlugin = require('terser-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const ManufestPlugin = require('webpack-manifest-plugin');
 
-dotenv.config();
+const isDev = (process.env.NODE_ENV === 'development');
+const entry = ['./src/frontend/index.js'];
+if (isDev) {
+  entry.push('webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true');
+}
+
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
   devtool: isProduction ? 'hidden-source-map' : 'cheap-source-map',
-  entry: './src/frontend/index.js',
+  entry,
   mode: process.env.NODE_ENV,
   output: {
     path: isProduction ? path.join(process.cwd(), './src/server/public') : '/',

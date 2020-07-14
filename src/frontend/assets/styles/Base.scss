@@ -1,40 +1,29 @@
-body {
-  margin: 0;
-  font-family: $theme-font;
-  background: $main-color;
-}
-
 * {
   box-sizing: border-box;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-family: $theme-font;
+  font-size: 14px;
+  font-weight: normal;
 }
 
-.input {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 2px solid white;
-  border-radius: 25px;
-  color: white;
-  font-family: "Muli", sans-serif;
-  font-size: 16px;
-  height: 50px;
-  margin-bottom: 20px;
-  outline: none;
-  padding: 0px 20px;
+body, #app {
+  width: 100vw;
+  height: 100vh;
+  background-color: $main-color;
+  overflow: hidden;
 }
-
-::placeholder {
-  color: white;
-}
-
 .button {
   background-color: rgba(255, 255, 255, 0.3);
   border: none;
-  border-radius: 25px;
+  border-radius: 24px;
   color: white;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   font-family: "Muli", sans-serif;
   height: 50px;
   letter-spacing: 1px;
-  margin: 10px 0px;
+  margin: 14px 0px 28px 0px;
 }
