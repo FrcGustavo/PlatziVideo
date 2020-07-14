@@ -7,7 +7,8 @@
     "build": "webpack-cli --config webpack.config.js --colors",
     "prod": "node src/server/index.js",
     "dev": "nodemon src/server/index.js --exact babel-node",
-    "lint": "eslint --ext .jsx --ext .js ./src/"
+    "lint": "eslint --ext .jsx --ext .js ./src/",
+    "fakeapi": "json-server ./src/fakeapi/index.json"
   },
   "keywords": [],
   "author": "",
@@ -39,7 +40,8 @@
     "react-router": "^5.2.0",
     "react-router-config": "^5.1.1",
     "react-router-dom": "^5.2.0",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "webpack": "^4.43.0"
   },
   "devDependencies": {
     "babel-loader": "^8.1.0",
@@ -54,12 +56,12 @@
     "file-loader": "^4.3.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "json-server": "^0.16.1",
     "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
     "sass-loader": "^7.1.0",
     "terser-webpack-plugin": "^3.0.6",
-    "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-middleware": "^3.7.0",
     "webpack-dev-server": "^3.11.0",
