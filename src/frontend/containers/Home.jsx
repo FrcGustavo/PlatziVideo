@@ -6,38 +6,36 @@ import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
 
-const Home = ({ myList, trends, originals }) => {
-  return (
-    <>
-      <Search isHome />
-      {myList.length > 0 && (
-        <Categories title='Mi Lista'>
-          <Carousel>
-            {myList.map(item => (
-              <CarouselItem key={item.id} {...item} isList />
-            ))}
-          </Carousel>
-        </Categories>
-      )}
+const Home = ({ myList, trends, originals }) => (
+  <>
+    <Search isHome />
+    {myList.length > 0 && (
+    <Categories title="Mi Lista">
+      <Carousel>
+        {myList.map((item) => (
+          <CarouselItem key={item.id} {...item} isList />
+        ))}
+      </Carousel>
+    </Categories>
+    )}
 
-      <Categories title='Tendencias'>
-        <Carousel>
-          {trends.map(item => (
-            <CarouselItem key={item.id} {...item} />
-          ))}
-        </Carousel>
-      </Categories>
+    <Categories title="Tendencias">
+      <Carousel>
+        {trends.map((item) => (
+          <CarouselItem key={item.id} {...item} />
+        ))}
+      </Carousel>
+    </Categories>
 
-      <Categories title='Originales de PlatziVideo'>
-        <Carousel>
-          {originals.map(item => (
-            <CarouselItem key={item.id} {...item} />
-          ))}
-        </Carousel>
-      </Categories>
-    </>
-  );
-};
+    <Categories title="Originales de PlatziVideo">
+      <Carousel>
+        {originals.map((item) => (
+          <CarouselItem key={item.id} {...item} />
+        ))}
+      </Carousel>
+    </Categories>
+  </>
+);
 
 function mapStateToProps(state) {
   return {

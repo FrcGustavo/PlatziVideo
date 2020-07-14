@@ -38,3 +38,8 @@ Start in mode production
 ```bash
 npm run prod
 ```
+
+Run linter and fix
+```bash
+npm run lint -- --fix
+```
