@@ -1,10 +1,10 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { hydrate } from 'react-dom';
-
-/* eslint-disable import/no-extraneous-dependencies */
+import { Router } from 'react-router';
 import { Provider } from 'react-redux';
 import { createStore, compose } from 'redux';
-import { Router } from 'react-router';
 import { createBrowserHistory } from 'history';
 
 import reducer from './reducers';

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -6,7 +7,7 @@ import { registerRequest } from '../actions';
 
 import '../assets/styles/components/Register.scss';
 
-const Register = (props) => {
+const Register = ({ history, registerUser }) => {
   const [form, setValues] = useState({
     email: '',
     name: '',
@@ -22,8 +23,8 @@ const Register = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.registerRequest(form);
-    props.history.push('/');
+    registerUser(form);
+    history.push('/');
   };
 
   return (
@@ -64,8 +65,15 @@ const Register = (props) => {
   );
 };
 
+Register.propTypes = {
+  registerUser: PropTypes.func.isRequired,
+  history: PropTypes.objectOf({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
+
 const mapDispatchToProps = {
-  registerRequest,
+  registerUser: registerRequest,
 };
 
 export default connect(
