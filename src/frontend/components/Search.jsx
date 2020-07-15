@@ -4,7 +4,7 @@ import '../assets/styles/components/Search.scss';
 const Search = () => (
   <section className="main">
     <h2 className="main__title">¿Qué quieres ver hoy?</h2>
-    <input type="text" className="isHome input" placeholder="Buscar..." />
+    <input type="text" className="isHome input" name="search" placeholder="Buscar..." />
   </section>
 );
 

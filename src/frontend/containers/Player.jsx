@@ -33,19 +33,31 @@ const Player = ({
         </button>
       </div>
     </div>
-  ) : (
-    <NotFound />
-  );
+  ) : (<NotFound />);
 };
 
 Player.propTypes = {
-  match: PropTypes.objectOf({
-    params: PropTypes.objectOf({
+  match: PropTypes.shape({
+    params: PropTypes.shape({
       id: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
-  history: PropTypes.objectOf().isRequired,
-  playing: PropTypes.objectOf().isRequired,
+  history: PropTypes.shape({
+    goBack: PropTypes.func,
+  }).isRequired,
+  playing: PropTypes.shape({
+    id: PropTypes.string,
+    slug: PropTypes.string,
+    title: PropTypes.string,
+    type: PropTypes.string,
+    language: PropTypes.string,
+    year: PropTypes.number,
+    contentRating: PropTypes.string,
+    duration: PropTypes.number,
+    cover: PropTypes.string,
+    description: PropTypes.string,
+    source: PropTypes.string,
+  }).isRequired,
   getVideo: PropTypes.func.isRequired,
 };
 
