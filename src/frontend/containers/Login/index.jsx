@@ -84,7 +84,7 @@ const Login = ({ history, login }) => {
 };
 
 Login.propTypes = {
-  history: PropTypes.objectOf({
+  history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
   login: PropTypes.func.isRequired,

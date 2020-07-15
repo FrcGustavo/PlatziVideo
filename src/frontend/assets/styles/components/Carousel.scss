@@ -1,8 +1,12 @@
 .carousel {
-    overflow: scroll;
-    padding-left: 30px;
-    width: 100%;
     position: relative;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.carousel::-webkit-scrollbar {
+    height: 20px;
 }
 
 .carousel__container {
@@ -12,7 +16,6 @@
     font-size: 0;
     white-space: nowrap;
     margin: 70px 0px;
-    padding-bottom: 10px;
 }
 
 .carousel__container:hover .carousel-item {

@@ -60,7 +60,7 @@ const Header = ({ user, logout }) => {
 };
 
 Header.propTypes = {
-  user: PropTypes.objectOf().isRequired,
+  user: PropTypes.objectOf(PropTypes.string).isRequired,
   logout: PropTypes.func.isRequired,
 };
 

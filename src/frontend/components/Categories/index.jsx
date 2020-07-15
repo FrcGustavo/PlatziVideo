@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../assets/styles/components/Categories.scss';
+
+import './styles.scss';
 
 const Categories = ({ children, title }) => (
   <div className="categories">

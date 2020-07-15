@@ -72,7 +72,7 @@ const Register = ({ history, registerUser }) => {
 
 Register.propTypes = {
   registerUser: PropTypes.func.isRequired,
-  history: PropTypes.objectOf({
+  history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
 };

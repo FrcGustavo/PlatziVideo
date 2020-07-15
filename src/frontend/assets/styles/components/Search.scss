@@ -4,12 +4,13 @@
   justify-content: center;
   flex-direction: column;
   height: 300px;
-  border-radius: 0px 0px 40px 40px;
+  border-radius: 0px 0px 24px 24px;
 }
 
 .main__title {
+  margin-bottom: 14px;
+  font-size: 28px;
   color: white;
-  font-size: 25px;
 }
 
 .main .isHome {

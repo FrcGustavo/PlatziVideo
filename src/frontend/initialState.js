@@ -4,7 +4,7 @@ export default {
   myList: [],
   trends: [
     {
-      id: 2,
+      id: '2',
       slug: 'tvshow-2',
       title: 'In the Dark',
       type: 'Scripted',
@@ -17,7 +17,7 @@ export default {
       source: 'https://mdstrm.com/video/58333e214ad055d208427db5.mp4',
     },
     {
-      id: 3,
+      id: '3',
       slug: 'tvshow-3',
       title: 'Instinct',
       type: 'Adventure',
@@ -30,7 +30,7 @@ export default {
       source: 'https://mdstrm.com/video/58333e214ad055d208427db5.mp4',
     },
     {
-      id: 4,
+      id: '4',
       slug: 'tvshow-4',
       title: 'Grand Hotel',
       type: 'Comedy',
@@ -43,7 +43,7 @@ export default {
       source: 'https://mdstrm.com/video/58333e214ad055d208427db5.mp4',
     },
     {
-      id: 5,
+      id: '5',
       slug: 'tvshow-5',
       title: 'Stargate Atlantis',
       type: 'Scripted',
@@ -56,7 +56,7 @@ export default {
       source: 'https://mdstrm.com/video/58333e214ad055d208427db5.mp4',
     },
     {
-      id: 6,
+      id: '6',
       slug: 'tvshow-6',
       title: 'Final Space',
       type: 'Scripted',
@@ -69,7 +69,7 @@ export default {
       source: 'https://mdstrm.com/video/58333e214ad055d208427db5.mp4',
     },
     {
-      id: 7,
+      id: '7',
       slug: 'tvshow-7',
       title: 'The InBetween',
       type: 'Drama',
@@ -84,7 +84,7 @@ export default {
   ],
   originals: [
     {
-      id: 8,
+      id: '8',
       slug: 'tvshow-8',
       title: 'Stargate Atlantis',
       type: 'Action',
@@ -97,7 +97,7 @@ export default {
       source: 'https://mdstrm.com/video/58333e214ad055d208427db5.mp4',
     },
     {
-      id: 9,
+      id: '9',
       slug: 'tvshow-9',
       title: 'Alien Highway',
       type: 'Action',
@@ -110,7 +110,7 @@ export default {
       source: 'https://mdstrm.com/video/58333e214ad055d208427db5.mp4',
     },
     {
-      id: 10,
+      id: '10',
       slug: 'tvshow-10',
       title: 'Elementary',
       type: 'Animation',
@@ -123,7 +123,7 @@ export default {
       source: 'https://mdstrm.com/video/58333e214ad055d208427db5.mp4',
     },
     {
-      id: 11,
+      id: '11',
       slug: 'tvshow-11',
       title: 'Strange Angel',
       type: 'War',
@@ -136,7 +136,7 @@ export default {
       source: 'https://mdstrm.com/video/58333e214ad055d208427db5.mp4',
     },
     {
-      id: 12,
+      id: '12',
       slug: 'tvshow-12',
       title: 'Private Eyes',
       type: 'Comedy',
@@ -149,7 +149,7 @@ export default {
       source: 'https://mdstrm.com/video/58333e214ad055d208427db5.mp4',
     },
     {
-      id: 13,
+      id: '13',
       slug: 'tvshow-13',
       title: 'NCIS: Los Angeles',
       type: 'Drama',

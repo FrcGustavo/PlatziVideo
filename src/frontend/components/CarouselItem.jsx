@@ -67,6 +67,10 @@ const CarouseItem = (props) => {
   );
 };
 
+CarouseItem.defaultProps = {
+  isList: false,
+};
+
 CarouseItem.propTypes = {
   id: PropTypes.string.isRequired,
   cover: PropTypes.string.isRequired,
@@ -74,7 +78,7 @@ CarouseItem.propTypes = {
   year: PropTypes.number.isRequired,
   contentRating: PropTypes.string.isRequired,
   duration: PropTypes.number.isRequired,
-  isList: PropTypes.bool.isRequired,
+  isList: PropTypes.bool,
   setF: PropTypes.func.isRequired,
   deleteF: PropTypes.func.isRequired,
 };
