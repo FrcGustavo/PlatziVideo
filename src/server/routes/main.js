@@ -7,7 +7,7 @@ import { StaticRouter } from 'react-router';
 import { renderRoutes } from 'react-router-config';
 import Routes from '../../frontend/routes/serverRoutes';
 import reducer from '../../frontend/reducers';
-import initialState from '../../frontend/initialState';
+import initialState from '../initialState';
 import render from '../render';
 
 const main = (req, res, next) => {
